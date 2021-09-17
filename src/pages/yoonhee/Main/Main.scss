@@ -1,0 +1,277 @@
+/*------공통-----*/
+/*------공통-----*/
+
+* {
+  box-sizing: border-box;
+}
+.main-body {
+  background-color: var(--color-boxgray);
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul > li {
+  margin: 10px 0;
+}
+
+.box {
+  background-color: white;
+  border: 1px solid var(--color-boxborder);
+}
+.box-padding {
+  padding: 10px;
+}
+
+.text {
+  font-size: 12px;
+}
+
+.text--gray {
+  margin-top: 3px;
+  font-size: 13px;
+  color: var(--color-textgray);
+}
+
+.icon {
+  border: no;
+}
+
+.btn {
+  /* margin-left: -10px; */
+  padding: 5px 0px;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--color--btn-text);
+  font-weight: bold;
+}
+.btn--hover:hover {
+  color: white;
+  background-color: var(--color--btn-text);
+}
+
+.westagram {
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+}
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user__img {
+  width: 30px;
+  height: 30px;
+  margin-right: 7px;
+  border-radius: 50%;
+  border: 1px solid var(--color-textgray);
+}
+
+.user__img--brder-red {
+  border: 1px solid red;
+  border-spacing: 3px;
+}
+
+.user__img--small {
+  width: 20px;
+  height: 18px;
+  margin-right: 5px;
+}
+
+.user__img--big {
+  width: 40px;
+  height: 40px;
+}
+
+.user__id {
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.user-text2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: 15px;
+}
+
+/*--------nav--------*/
+/*--------nav--------*/
+/*--------nav--------*/
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+  /* margin-bottom: 5vh; */
+  border-bottom: 1px solid var(--color-boxborder);
+  background-color: white;
+}
+
+.nav__border {
+  height: 30px;
+  border-left: 2px solid black;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 18%;
+}
+
+.nav-center {
+  width: 20%;
+}
+
+.nav-center > .search-bar {
+  height: 25px;
+  width: 100%;
+  border: 1px solid var(--color-boxborder);
+  background-color: var(--color-boxgray);
+  text-align: center;
+}
+.search-bar[value] {
+  color: var(--color-textgray);
+}
+
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  width: 12%;
+}
+
+/*----------feed----------*/
+/*----------feed----------*/
+/*----------feed----------*/
+
+.feeds {
+  display: flex;
+  width: 50%;
+  padding-top: 65px;
+}
+.feed {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--color-boxborder);
+  background-color: white;
+}
+
+.feed__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  margin: 15px 20px;
+}
+
+.feed__head > .user {
+  width: 22%;
+}
+
+.feed__img {
+  width: 100%;
+}
+
+.feed__icons {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 12px 0px;
+}
+
+.feed__icons__left {
+  display: flex;
+  justify-content: space-between;
+  width: 18%;
+}
+
+.feed__likes {
+  display: flex;
+  align-items: center;
+  width: 95%;
+}
+
+.feed__text {
+  width: 95%;
+  margin-top: 15px;
+}
+
+.feed__comment-box {
+  width: 100%;
+  height: 35px;
+  margin-top: 5px;
+  border-top: 1px solid var(--color-boxborder);
+  border-bottom: 1px solid var(--color-boxborder);
+}
+
+.comment__input {
+  width: 90%;
+  height: 100%;
+  padding-left: 14px;
+  border: none;
+}
+
+.comment__input[placehilder] {
+  color: var(--color-textgray);
+}
+
+.comment__btn {
+  width: 8%;
+  height: 80;
+}
+
+.feed__comment {
+  width: 100%;
+}
+.feed__comment-list {
+  width: 95%;
+  margin: 10px 0;
+  padding: 5px 14px;
+}
+
+.feed__comment-list > li {
+  font-size: 13px;
+}
+
+/*-------------main-right------------*/
+/*-------------main-right------------*/
+/*-------------main-right------------*/
+
+.main-right {
+  width: 25%;
+  margin-top: 65px;
+  /* position: fixed; */
+}
+
+.main-right__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 0 5px;
+}
+
+.user-and-botton {
+  width: 70%;
+  display: flex;
+}
+
+.main-right__story > .box {
+  margin-top: 15px;
+}
+
+.main-right__user2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px;
+}

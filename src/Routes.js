@@ -15,7 +15,7 @@ class Routes extends React.Component {
   render() {
     return (
       <Router>
-        <Nav />
+        {/* <Nav /> */}
         <Switch>
           <Route exact path="/login-donghyeok" component={LoginDongHyeok} />
           <Route exact path="/main-donghyeok" component={MainDongHyeok} />
