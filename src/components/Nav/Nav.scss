@@ -30,8 +30,6 @@
 
       .westagramLogo {
         display: inline-block;
-        width: 103px;
-        height: 29px;
         padding-left: 10px;
         color: black;
         font-family: "Lobster", cursive;
@@ -49,7 +47,7 @@
         height: 28px;
         padding: 7px;
         background-color: #fafafa;
-        border: 1px solid #dbdbdb;
+        border: 1px solid var(--color-textgray);
         color: #8e8e8e;
         opacity: 0.5;
         font-size: 14px;
@@ -57,14 +55,14 @@
 
         &:focus {
           outline: none;
-          border-color: var(--color-boxborder);
+          border-color: var(--color-textgray);
         }
       }
 
       .fa-search {
         position: absolute;
-        top: 16px;
-        left: 38%;
+        top: 8.5px;
+        left: 37%;
         color: #8e8e8e;
         opacity: 0.5;
         font-size: 12px;
