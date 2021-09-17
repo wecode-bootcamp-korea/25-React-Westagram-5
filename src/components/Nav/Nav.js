@@ -1,10 +1,10 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import "../../styles/reset.scss";
-import "../../styles/common.scss";
-import "./Nav.scss";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import '../../styles/reset.scss';
+import '../../styles/common.scss';
+import './Nav.scss';
 
 class Nav extends React.Component {
   render() {
@@ -23,13 +23,25 @@ class Nav extends React.Component {
           </div>
           <div className="navRight">
             <a href="#">
-              <img alt="explore img" className="navIcons" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png" />
+              <img
+                alt="explore img"
+                className="navIcons"
+                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
+              />
             </a>
             <a href="#">
-              <img alt="heart img" className="navIcons" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png" />
+              <img
+                alt="heart img"
+                className="navIcons"
+                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+              />
             </a>
             <a href="#">
-              <img alt="profile img" className="navIcons" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png" />
+              <img
+                alt="profile img"
+                className="navIcons"
+                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/profile.png"
+              />
             </a>
           </div>
         </div>

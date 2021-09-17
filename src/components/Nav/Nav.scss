@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import "../../styles/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import '../../styles/variables.scss';
 
 .navPostionSet {
   position: fixed;
@@ -32,7 +32,7 @@
         display: inline-block;
         padding-left: 10px;
         color: black;
-        font-family: "Lobster", cursive;
+        font-family: 'Lobster', cursive;
         font-size: 22px;
         text-decoration: none;
         cursor: pointer;
