@@ -41,18 +41,6 @@
   background-color: var(--color-boxgray);
 }
 
-.btn:disabled {
-  width: 230px;
-  height: 30px;
-  border-radius: 5px;
-  background-color: var(--color--btn-text-yet);
-  border: none;
-  font-weight: bold;
-  color: white;
-  margin-top: 10px;
-  margin-bottom: 80px;
-}
-
 .find-ps {
   text-decoration: none;
   font-size: 13px;
@@ -63,6 +51,17 @@
   height: 30px;
   border-radius: 5px;
   background-color: var(--color--btn-text);
+  border: none;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 80px;
+}
+.disabled {
+  width: 230px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: var(--color--btn-text-yet);
   border: none;
   font-weight: bold;
   color: white;
