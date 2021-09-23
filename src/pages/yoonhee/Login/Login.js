@@ -39,8 +39,8 @@ class LoginForm extends React.Component {
         />
         <button
           type="submit"
-          className={this.state.clickBtn ? 'log-in__btn' : 'disabled'}
-          onClick={this.props.onBtn}
+          className={this.state.isBtn ? 'log-in__btn' : 'disabled'}
+          onClick={this.props.clickBtn}
         >
           로그인
         </button>
