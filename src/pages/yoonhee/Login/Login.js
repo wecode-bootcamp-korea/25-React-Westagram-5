@@ -1,6 +1,46 @@
 import React from 'react';
 import './Login.scss';
 
+class LoginForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { id: '', ps: '' };
+  }
+
+  handleIdInput = e => {
+    this.setState({ id: e.target.value });
+    // this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handlePsInput = e => {
+    this.setState({ ps: e.target.value });
+  };
+
+  render() {
+    return (
+      <form>
+        <input
+          name="id"
+          className="log-in__id"
+          type="text"
+          placeholder="전화번호, 사용자 이름 또는 이메일"
+          onChange={this.handleIdInput}
+        />
+        <input
+          name="ps"
+          className="log-in__ps"
+          type="password"
+          placeholder="비밀번호"
+          onChange={this.handlePsInput}
+        />
+        <button type="submit" className="log-in__btn" onClick={this.goToMain}>
+          로그인
+        </button>
+      </form>
+    );
+  }
+}
+
 class LoginYoonHee extends React.Component {
   goToMain = () => {
     this.props.history.push('/main-yoonhee');
@@ -12,21 +52,7 @@ class LoginYoonHee extends React.Component {
         <div className="log-in__main">
           <h1 className="main-name">westagram</h1>
           <div className="log-in">
-            <form>
-              <input
-                className="log-in__id"
-                type="text"
-                placeholder="전화번호, 사용자 이름 또는 이메일"
-              />
-              <input
-                className="log-in__ps"
-                type="password"
-                placeholder="비밀번호"
-              />
-              <button className="log-in__btn" onClick={this.goToMain}>
-                로그인
-              </button>
-            </form>
+            <LoginForm />
           </div>
           <a className="find-ps" href="#!">
             비밀번호를 잊으셨나요?
