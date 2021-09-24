@@ -7,6 +7,10 @@ class LoginForm extends React.Component {
     this.state = { id: '', ps: '', isBtn: false };
   }
 
+  goToMain = () => {
+    this.props.clickBtn.push('/main-yoonhee');
+  };
+
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value }, () => this.btnChange());
   };
@@ -40,7 +44,7 @@ class LoginForm extends React.Component {
         <button
           type="submit"
           className={this.state.isBtn ? 'log-in__btn' : 'disabled'}
-          onClick={this.props.clickBtn}
+          onClick={this.goToMain}
         >
           로그인
         </button>
@@ -50,21 +54,13 @@ class LoginForm extends React.Component {
 }
 
 class LoginYoonHee extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = { isAct: false };
-  // }
-  goToMain = () => {
-    this.props.history.push('/main-yoonhee');
-  };
-
   render() {
     return (
       <article className="login-art">
         <div className="log-in__main">
           <h1 className="main-name">westagram</h1>
           <div className="log-in">
-            <LoginForm clickBtn={this.goToMain} />
+            <LoginForm clickBtn={this.props.history} />
           </div>
           <a className="find-ps" href="#!">
             비밀번호를 잊으셨나요?
