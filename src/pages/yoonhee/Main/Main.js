@@ -11,12 +11,18 @@ import {
   faDownload,
   faBookmark,
 } from '@fortawesome/free-solid-svg-icons';
-// import { withRouter } from 'react-router-dom';
 import './Main.scss';
 
+class Comment extends React.Component {
+  render() {
+    const { id, innerText } = this.props;
+    return <li key={id}>{innerText}</li>;
+  }
+}
+
 class Commentbox extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { feedComment: '', commentList: [] };
   }
 
@@ -31,10 +37,13 @@ class Commentbox extends React.Component {
   };
 
   commentAdd = () => {
-    const feedComment = this.state.feedComment;
-    this.state.commentList.push(feedComment);
+    const { feedComment, commentList } = this.state;
+    const newfeedComment = feedComment;
+    //꼭 새로운 변수안에 넣어줘야하나??
+    const addNewFeed = commentList.concat(newfeedComment);
+    //불변성 유지?
     this.setState({
-      commentList: this.state.commentList,
+      commentList: addNewFeed,
       feedComment: '',
     });
   };
@@ -62,9 +71,9 @@ class Commentbox extends React.Component {
         </div>
         <div className="feed__comment">
           <ul id="comment-list" className="feed__comment-list">
-            {this.state.commentList.map(cur => (
-              <li>{cur}</li>
-            ))}
+            {this.state.commentList.map((cur, index) => {
+              return <Comment id={index} innerText={cur} />;
+            })}
           </ul>
         </div>
       </>

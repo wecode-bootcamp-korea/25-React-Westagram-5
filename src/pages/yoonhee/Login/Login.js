@@ -13,6 +13,7 @@ class LoginForm extends React.Component {
 
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value }, () => this.btnChange());
+    //setState로 값을 업데이트하고 난뒤에 특정작업을 하고싶을때에는 setstated의 두번째 파라미터로 콜백함수를 등록하여 작업을 처리한다
   };
 
   btnChange = () => {
