@@ -9,23 +9,35 @@ class Login extends React.Component {
     this.state = {
       id: '',
       pw: '',
+      isBtnActive: false,
     };
   }
+
   handleIdInput = e => {
     this.setState({
       id: e.target.value,
     });
   };
+
   handlePwInput = e => {
     this.setState({
       pw: e.target.value,
     });
   };
+
+  handleBtn = () => {
+    const { id, pw } = this.state;
+    id.includes('@') && pw.length > 5
+      ? this.setState({ isBtnActive: true })
+      : this.setState({ isBtnActive: false });
+  };
+
   goToMain = () => {
-    this.props.history.push('../main/main');
+    this.props.history.push('/main-seungkyun');
   };
 
   render() {
+    console.log(this.state);
     return (
       <main className="login-seungkyun">
         <div className="container">
@@ -36,6 +48,7 @@ class Login extends React.Component {
               placeholder="전화번호, 사용자 이름 또는 이메일"
               id="idfield"
               className="textfield"
+              onKeyUp={this.handleBtn}
               onChange={this.handleIdInput}
             />
             <input
@@ -43,10 +56,12 @@ class Login extends React.Component {
               placeholder="비밀번호"
               id="pwfield"
               className="textfield"
+              onKeyUp={this.handleBtn}
               onChange={this.handlePwInput}
             />
             <button
-              className="submitButton"
+              className={this.state.isBtnActive ? 'btnOn' : 'submitButton'}
+              disabled={this.state.isBtnActive ? false : true}
               onClick={this.goToMain}
               id="submitButton"
             >
