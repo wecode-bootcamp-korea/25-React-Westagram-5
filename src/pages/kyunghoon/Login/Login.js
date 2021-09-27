@@ -43,7 +43,23 @@ class Login extends React.Component {
               onChange={this.handlePwInput}
             />
             {/* <Link to="/main-kyunghoon"> */}
-            <button onClick={this.goToMain}>로그인</button>
+            <button
+              className={
+                this.state.userId.indexOf('@') !== -1 &&
+                this.state.userPassword.length >= 5
+                  ? 'activeButton'
+                  : 'disabledButton'
+              }
+              buttonColorControl={
+                this.state.userId.indexOf('@') !== -1 &&
+                this.state.userPassword.length >= 5
+                  ? 'true'
+                  : 'false'
+              }
+              onClick={this.goToMain}
+            >
+              로그인
+            </button>
             {/* </Link> */}
           </div>
           <div className="forgetPassword">
