@@ -1,0 +1,75 @@
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginInner {
+  border: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding: 80px;
+  margin-top: 200px;
+}
+.headline {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.userInformation {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-bottom: 20px;
+}
+
+.userId {
+  width: 280px;
+  margin: 20px 20px 10px 20px;
+  padding: 10px 10px 10px 5px;
+  font-size: 14px;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+}
+
+.userPassword {
+  width: 280px;
+  margin-left: 20px;
+  padding: 10px 10px 10px 5px;
+  color: gary;
+  font-size: 14px;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+}
+
+button {
+  margin-top: 10px;
+  border: none;
+  background-color: #cce8f4;
+  padding: 7px 0;
+  margin: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.activeButton {
+  background-color: #78dfff;
+}
+
+.normalButton {
+  background-color: #cce8f4;
+}
+
+.forget {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-weight: bold;
+  color: #2e5d89;
+  text-decoration: none;
+}
