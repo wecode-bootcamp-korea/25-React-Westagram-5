@@ -126,7 +126,7 @@ class Main extends React.Component {
             <div className="main_right_center">
               <div className="main_right_center_top">
                 <span id="story">스토리</span>
-                <span class="add">모두 보기</span>
+                <span className="add">모두 보기</span>
               </div>
               <div className="main_right_center_profile">
                 <div className="main_right_center_profile1">
@@ -160,7 +160,7 @@ class Main extends React.Component {
             <div className="main_right_bottom">
               <div className="main_right_bottom_top">
                 <span>회원님을 위한 추천</span>
-                <span class="add">모두 보기</span>
+                <span className="add">모두 보기</span>
               </div>
               <div className="main_right_centr_profile">
                 <div className="main_right_bottom_profile1">
@@ -170,7 +170,7 @@ class Main extends React.Component {
                     src="images/donghyeok/profile.png"
                   />
                   <span className="main_right_bottom_profile_id">_yum_s</span>
-                  <span class="follow">팔로우</span>
+                  <span className="follow">팔로우</span>
                 </div>
                 <div className="main_right_bottom_profile2">
                   <img
@@ -188,7 +188,7 @@ class Main extends React.Component {
                     src="images/donghyeok/profile.png"
                   />
                   <span className="main_right_bottom_profile_id">hyukyc</span>
-                  <span class="follow">팔로우</span>
+                  <span className="follow">팔로우</span>
                 </div>
               </div>
             </div>
