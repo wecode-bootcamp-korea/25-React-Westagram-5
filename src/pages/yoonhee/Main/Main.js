@@ -1,5 +1,7 @@
 // eslint-disable-next-line
 import React from 'react';
+import './Main.scss';
+import CommentBox from './CommentBox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCamera,
@@ -11,75 +13,6 @@ import {
   faDownload,
   faBookmark,
 } from '@fortawesome/free-solid-svg-icons';
-import './Main.scss';
-
-class Comment extends React.Component {
-  render() {
-    const { id, innerText } = this.props;
-    return <li key={id}>{innerText}</li>;
-  }
-}
-
-class Commentbox extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { feedComment: '', commentList: [] };
-  }
-
-  commentInput = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  isKeyEnter = e => {
-    if (e.key === 'Enter') {
-      this.commentAdd();
-    }
-  };
-
-  commentAdd = () => {
-    const { feedComment, commentList } = this.state;
-    const newfeedComment = feedComment;
-    //꼭 새로운 변수안에 넣어줘야하나??
-    const addNewFeed = commentList.concat(newfeedComment);
-    //불변성 유지?
-    this.setState({
-      commentList: addNewFeed,
-      feedComment: '',
-    });
-  };
-
-  render() {
-    return (
-      <>
-        <div className="feed__comment-box">
-          <input
-            name="feedComment"
-            id="comment-input"
-            className="comment__input"
-            placeholder="댓글 달기..."
-            onChange={this.commentInput}
-            onKeyDown={this.isKeyEnter}
-            value={this.state.feedComment}
-          />
-          <button
-            id="comment-btn"
-            className="btn btn--hover comment__btn"
-            onClick={this.commentAdd}
-          >
-            게시
-          </button>
-        </div>
-        <div className="feed__comment">
-          <ul id="comment-list" className="feed__comment-list">
-            {this.state.commentList.map((cur, index) => {
-              return <Comment id={index} innerText={cur} />;
-            })}
-          </ul>
-        </div>
-      </>
-    );
-  }
-}
 
 class MainYoonHee extends React.Component {
   render() {
@@ -165,23 +98,7 @@ class MainYoonHee extends React.Component {
                 </span>
                 <div className="text text--gray">5분 전</div>
               </div>
-              <Commentbox />
-              {/* <div className="feed__comment-box">
-                <input
-                  id="comment-input"
-                  className="comment__input"
-                  placeholder="댓글 달기..."
-                />
-                <button
-                  id="comment-btn"
-                  className="btn btn--hover comment__btn"
-                >
-                  게시
-                </button>
-              </div>
-              <div className="feed__comment">
-                <ul id="comment-list" className="feed__comment-list"></ul>
-              </div> */}
+              <CommentBox />
             </article>
           </div>
           <div className="main-right">
