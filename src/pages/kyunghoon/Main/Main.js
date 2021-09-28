@@ -2,6 +2,33 @@ import React from 'react';
 import '../Main/Main.scss';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: '',
+      commentList: [],
+    };
+  }
+
+  writeComment = e => {
+    this.setState({
+      comment: e.target.value,
+    });
+  };
+
+  addComment = () => {
+    this.setState({
+      commentList: this.state.commentList.concat([this.state.comment]),
+      comment: '',
+    });
+  };
+
+  enterKey = e => {
+    if (e.key === 'Enter') {
+      this.addComment();
+    }
+  };
+
   render() {
     return (
       <div>
@@ -9,22 +36,22 @@ class Main extends React.Component {
           <div className="headerContents">
             <div className="westagramTag">
               <a href=" ">
-                <i class="fab fa-instagram"></i> | Westagram
+                <i className="fab fa-instagram"></i> | Westagram
               </a>
             </div>
             <div className="headerSearchBar">
-              <i class="fas fa-search"></i>
+              <i className="fas fa-search"></i>
               <input type="text" placeholder="검색" />
             </div>
             <nav className="headerRightImage">
               <a href=" ">
-                <i class="far fa-compass" />
+                <i className="far fa-compass" />
               </a>
               <a href=" ">
-                <i class="far fa-heart" />
+                <i className="far fa-heart" />
               </a>
               <a href=" ">
-                <i class="fas fa-user" />
+                <i className="fas fa-user" />
               </a>
             </nav>
           </div>
@@ -33,17 +60,19 @@ class Main extends React.Component {
           <article>
             <div className="feedHeader">
               <img
+                alt=""
                 src="./images/kyunghoon/hi1.png"
                 width="32px"
                 height="32px"
               />
               <span>hoonstagram</span>
-              <a href="">
-                <i class="fas fa-ellipsis-h"></i>
+              <a href=" ">
+                <i className="fas fa-ellipsis-h"></i>
               </a>
             </div>
             <div className="feedImage">
               <img
+                alt=""
                 src="./images/kyunghoon/hi2.JPG"
                 width="614px"
                 height="614px"
@@ -52,24 +81,25 @@ class Main extends React.Component {
             <div className="feedReactionButton">
               <div className="reactionButton1">
                 <button>
-                  <i class="far fa-heart"></i>
+                  <i className="far fa-heart"></i>
                 </button>
                 <button>
-                  <i class="far fa-comment"></i>
+                  <i className="far fa-comment"></i>
                 </button>
                 <button>
-                  <i class="fas fa-share-square"></i>
+                  <i className="fas fa-share-square"></i>
                 </button>
               </div>
               <div className="reactionButton2">
                 <button>
-                  <i class="far fa-bookmark"></i>
+                  <i className="far fa-bookmark"></i>
                 </button>
               </div>
             </div>
             <div className="feedReaction">
               <div className="ReactionImage">
                 <img
+                  alt=""
                   src="./images/kyunghoon/hi1.png"
                   width="32px"
                   height="32px"
@@ -82,7 +112,7 @@ class Main extends React.Component {
                   <p>서핑 가즈아~~~...</p>
                 </div>
                 <div className="moreView">
-                  <a href="">더보기</a>
+                  <a href=" ">더보기</a>
                 </div>
               </div>
               <div id="friendsSentence">
@@ -92,6 +122,17 @@ class Main extends React.Component {
                     <span>거봐 좋았잖아 ~~~😎</span>
                   </li>
                 </ul>
+                <ul className="comment_list">
+                  {this.state.commentList.map(comment => {
+                    return (
+                      <li className="comment_box">
+                        <span className="comment_id">
+                          hoonstagram {comment}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
                 <div className="time">
                   <p>42분전</p>
                 </div>
@@ -100,9 +141,14 @@ class Main extends React.Component {
                 <input
                   id="feedComment"
                   type="text"
+                  value={this.state.comment}
                   placeholder="댓글 달기..."
+                  onChange={this.writeComment}
+                  onKeyPress={this.enterKey}
                 />
-                <button id="submitbtn">게시</button>
+                <button id="submitbtn" onClick={this.addComment}>
+                  게시
+                </button>
               </div>
             </div>
           </article>
@@ -110,6 +156,7 @@ class Main extends React.Component {
             <aside className="asidenim" />
             <div className="asideHead">
               <img
+                alt=""
                 src="./images/kyunghoon/hi1.png"
                 width="56px"
                 height="56px"
@@ -127,6 +174,7 @@ class Main extends React.Component {
               <div className="asideBodyImgId">
                 <div className="asidehi">
                   <img
+                    alt=""
                     src="./images/kyunghoon/hi3.jpg"
                     width="32px"
                     height="32px"
@@ -138,6 +186,7 @@ class Main extends React.Component {
                 </div>
                 <div className="asidehi">
                   <img
+                    alt=""
                     src="./images/kyunghoon/hi4.jpg"
                     width="32px"
                     height="32px"
@@ -149,6 +198,7 @@ class Main extends React.Component {
                 </div>
                 <div className="asidehi">
                   <img
+                    alt=""
                     src="./images/kyunghoon/hi5.jpg"
                     width="32px"
                     height="32px"
@@ -160,6 +210,7 @@ class Main extends React.Component {
                 </div>
                 <div className="asidehi">
                   <img
+                    alt=""
                     src="./images/kyunghoon/hi6.jpg"
                     width="32px"
                     height="32px"
@@ -178,6 +229,7 @@ class Main extends React.Component {
               </div>
               <div className="asideTailsRecommend1">
                 <img
+                  alt=""
                   src="./images/kyunghoon/hi7.jpg"
                   width="32px"
                   height="32px"
@@ -189,6 +241,7 @@ class Main extends React.Component {
               </div>
               <div className="asideTailsRecommend1">
                 <img
+                  alt=""
                   src="./images/kyunghoon/hi8.jpg"
                   width="32px"
                   height="32px"
@@ -200,6 +253,7 @@ class Main extends React.Component {
               </div>
               <div className="asideTailsRecommend1">
                 <img
+                  alt=""
                   src="./images/kyunghoon/hi9.jpg"
                   width="32px"
                   height="32px"

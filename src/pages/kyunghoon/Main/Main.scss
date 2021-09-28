@@ -169,12 +169,13 @@ article {
   flex-direction: row;
   justify-content: space-between;
   border-top: 1px solid rgba(var(--b6a, 219, 219, 219), 1);
-  padding: 5px;
+  height: 40px;
 }
 
-.feedComment {
+#feedComment {
   border: none;
-  width: 560px;
+  width: 530px;
+  height: 30px;
 }
 
 .feedCommentContainer button {
@@ -182,6 +183,11 @@ article {
   outline: 0;
   color: rgba(var(--d69, 0, 149, 246), 1);
   background-color: white;
+}
+#comments {
+  li {
+    padding-left: 10px;
+  }
 }
 
 .asidenim {
@@ -318,4 +324,8 @@ article {
     padding-top: 5px;
     color: rgba(var(--b6a, 219, 219, 219), 1);
   }
+}
+
+.comment_list {
+  padding-left: 10px;
 }
