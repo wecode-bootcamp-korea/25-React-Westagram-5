@@ -1,4 +1,5 @@
 import React from 'react';
+import Comment from '../Comment/Comment.js';
 import '../Main/Main.scss';
 
 class Main extends React.Component {
@@ -123,14 +124,8 @@ class Main extends React.Component {
                   </li>
                 </ul>
                 <ul className="comment_list">
-                  {this.state.commentList.map(comment => {
-                    return (
-                      <li className="comment_box">
-                        <span className="comment_id">
-                          hoonstagram {comment}
-                        </span>
-                      </li>
-                    );
+                  {this.state.commentList.map((comment, index) => {
+                    return <Comment key={index} comment={comment} />;
                   })}
                 </ul>
                 <div className="time">
