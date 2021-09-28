@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from 'react';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
@@ -37,7 +38,6 @@ class Login extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <main className="login-seungkyun">
         <div className="container">
@@ -60,8 +60,10 @@ class Login extends React.Component {
               onChange={this.handlePwInput}
             />
             <button
-              className={this.state.isBtnActive ? 'btnOn' : 'submitButton'}
-              disabled={this.state.isBtnActive ? false : true}
+              className={
+                this.state.isBtnActive ? 'submitButton btnOn' : 'submitButton'
+              }
+              disabled={!this.state.isBtnActive}
               onClick={this.goToMain}
               id="submitButton"
             >

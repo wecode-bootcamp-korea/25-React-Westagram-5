@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,13 +10,45 @@ import {
   faSmile,
 } from '@fortawesome/free-regular-svg-icons';
 import { faEllipsisH, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import './Main.scss';
 
 class Main extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: '',
+      commentList: [],
+      isBtnActive: false,
+    };
+  }
+  getText = e => {
+    this.setState({
+      comment: e.target.value,
+    });
+  };
+  addComment = () => {
+    this.setState({
+      commentList: this.state.commentList.concat([this.state.comment]),
+      comment: '',
+      isBtnActive: false,
+    });
+  };
+  enterKey = e => {
+    if (e.key === 'Enter' && this.state.isBtnActive) {
+      e.preventDefault();
+      this.addComment();
+    }
+  };
+  activeBtn = () => {
+    this.state.comment
+      ? this.setState({ isBtnActive: true })
+      : this.setState({ isBtnActive: false });
+  };
+
   render() {
+    console.log(this.state);
     return (
       <div className="main-seungkyun">
         <main className="bodyContainer">
@@ -109,13 +142,28 @@ class Main extends React.Component {
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
                   />
                 </div>
+                {this.state.commentList.map(comment => {
+                  return (
+                    <div className="commentLines">
+                      <div>
+                        <a href="#">userName0001</a>
+                        <span>{comment}</span>
+                      </div>
+                      <img
+                        alt="heart img"
+                        className="commentHeart"
+                        src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+                      />
+                    </div>
+                  );
+                })}
               </div>
             </div>
             <div className="days">
-              <time datetime="20:00"></time>
+              <time dateTime="20:00"></time>
               <time
                 className=""
-                datetime="2021-09-10T13:55:10"
+                dateTime="2021-09-10T13:55:10"
                 title="2021년 9월 10일"
               >
                 1일 전
@@ -128,8 +176,21 @@ class Main extends React.Component {
               <textarea
                 className="commentField"
                 placeholder="댓글 달기..."
+                value={this.state.comment}
+                onChange={this.getText}
+                onKeyUp={this.activeBtn}
+                onKeyPress={this.enterKey}
               ></textarea>
-              <button className="uploadComment" disabled="true">
+              {console.log(this.state.comment)}
+              <button
+                className={
+                  this.state.isBtnActive
+                    ? 'uploadComment active'
+                    : 'uploadComment'
+                }
+                onClick={this.addComment}
+                disabled={!this.state.isBtnActive}
+              >
                 게시
               </button>
             </div>

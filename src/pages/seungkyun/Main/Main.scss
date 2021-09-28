@@ -203,10 +203,15 @@
           text-align: left;
         }
 
-        button:last-child {
+        .uploadComment {
           font-size: 14px;
           color: #0095f6;
           padding-left: 2px;
+        }
+
+        .active {
+          opacity: 1;
+          cursor: pointer;
         }
 
         .commentField {
