@@ -1,6 +1,5 @@
 /*eslint-disable*/
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBookmark,
@@ -10,6 +9,7 @@ import {
   faSmile,
 } from '@fortawesome/free-regular-svg-icons';
 import { faEllipsisH, faSearch } from '@fortawesome/free-solid-svg-icons';
+import Comment from './Comment';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import './Main.scss';
@@ -142,21 +142,7 @@ class Main extends React.Component {
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
                   />
                 </div>
-                {this.state.commentList.map(comment => {
-                  return (
-                    <div className="commentLines">
-                      <div>
-                        <a href="#">userName0001</a>
-                        <span>{comment}</span>
-                      </div>
-                      <img
-                        alt="heart img"
-                        className="commentHeart"
-                        src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                      />
-                    </div>
-                  );
-                })}
+                <Comment commentList={this.state.commentList} />
               </div>
             </div>
             <div className="days">
