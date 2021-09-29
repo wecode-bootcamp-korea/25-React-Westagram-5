@@ -11,7 +11,7 @@ class Comment extends React.Component {
           return (
             <div className="commentLines" key={i}>
               <div>
-                <a href="#">userName0001</a>
+                <a href="#">user9999</a>
                 <span>{comment}</span>
               </div>
               <img

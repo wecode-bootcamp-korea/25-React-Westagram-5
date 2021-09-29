@@ -9,7 +9,9 @@ import {
   faSmile,
 } from '@fortawesome/free-regular-svg-icons';
 import { faEllipsisH, faSearch } from '@fortawesome/free-solid-svg-icons';
+// import Feed from './Feed';
 import Comment from './Comment';
+import SavedCommentList from './SavedCommentList';
 import '../../../styles/common.scss';
 import '../../../styles/reset.scss';
 import './Main.scss';
@@ -21,6 +23,7 @@ class Main extends React.Component {
       comment: '',
       commentList: [],
       isBtnActive: false,
+      savedCommentList: [],
     };
   }
   getText = e => {
@@ -46,6 +49,16 @@ class Main extends React.Component {
       ? this.setState({ isBtnActive: true })
       : this.setState({ isBtnActive: false });
   };
+
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json')
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          savedCommentList: data,
+        });
+      });
+  }
 
   render() {
     console.log(this.state);
@@ -131,17 +144,15 @@ class Main extends React.Component {
                     error velit quam eos ipsum tempora reprehenderit.
                   </span>
                 </div>
-                <div className="commentLines">
-                  <div>
-                    <a href="#">user_1234</a>
-                    <span>Sample Text</span>
-                  </div>
-                  <img
-                    alt="heart img"
-                    className="commentHeart"
-                    src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                  />
-                </div>
+                {this.state.savedCommentList.map(item => {
+                  return (
+                    <SavedCommentList
+                      key={item.id}
+                      username={item.username}
+                      content={item.content}
+                    />
+                  );
+                })}
                 <Comment commentList={this.state.commentList} />
               </div>
             </div>
@@ -167,7 +178,6 @@ class Main extends React.Component {
                 onKeyUp={this.activeBtn}
                 onKeyPress={this.enterKey}
               ></textarea>
-              {console.log(this.state.comment)}
               <button
                 className={
                   this.state.isBtnActive
