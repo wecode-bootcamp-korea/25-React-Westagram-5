@@ -5,7 +5,9 @@ class Comment extends React.Component {
   render() {
     return (
       <li className="comment_box">
-        <span className="comment_id">hoonstagram {this.props.comment}</span>
+        <span className="comment_id">
+          {this.props.name} {this.props.comment}
+        </span>
       </li>
     );
   }

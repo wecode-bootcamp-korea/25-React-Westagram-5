@@ -1,5 +1,5 @@
 import React from 'react';
-import Comment from '../Comment/Comment.js';
+import CommentList from '../Comment/CommentList';
 import '../Main/Main.scss';
 
 class Main extends React.Component {
@@ -19,7 +19,7 @@ class Main extends React.Component {
 
   addComment = () => {
     this.setState({
-      commentList: this.state.commentList.concat([this.state.comment]),
+      commentList: this.state.commentList.concat(this.state.comment),
       comment: '',
     });
   };
@@ -116,6 +116,9 @@ class Main extends React.Component {
                   <a href=" ">더보기</a>
                 </div>
               </div>
+              <div className="time">
+                <p>42분전</p>
+              </div>
               <div id="friendsSentence">
                 <ul id="comments">
                   <li>
@@ -123,28 +126,30 @@ class Main extends React.Component {
                     <span>거봐 좋았잖아 ~~~😎</span>
                   </li>
                 </ul>
-                <ul className="comment_list">
-                  {this.state.commentList.map((comment, index) => {
-                    return <Comment key={index} comment={comment} />;
-                  })}
-                </ul>
-                <div className="time">
-                  <p>42분전</p>
-                </div>
+                <CommentList />
               </div>
-              <div className="feedCommentContainer">
-                <input
-                  id="feedComment"
-                  type="text"
-                  value={this.state.comment}
-                  placeholder="댓글 달기..."
-                  onChange={this.writeComment}
-                  onKeyPress={this.enterKey}
-                />
-                <button id="submitbtn" onClick={this.addComment}>
-                  게시
-                </button>
-              </div>
+            </div>
+            <ul className="comment_Lists">
+              {this.state.commentList.map(comment => {
+                return (
+                  <li className="comment_box">
+                    <span className="comment_id">hoonstagram {comment}</span>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="feedCommentContainer">
+              <input
+                className="feedComment"
+                type="text"
+                value={this.state.comment}
+                placeholder="댓글 달기..."
+                onChange={this.writeComment}
+                onKeyPress={this.enterKey}
+              />
+              <button className="submitbtn" onClick={this.addComment}>
+                게시
+              </button>
             </div>
           </article>
           <div>
