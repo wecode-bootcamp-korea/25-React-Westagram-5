@@ -3,10 +3,10 @@ import React from 'react';
 class LoginForm extends React.Component {
   constructor() {
     super();
-    this.state = { id: '', ps: '', isBtn: false };
+    this.state = { id: '', ps: '' };
   }
 
-  goToMain = () => {
+  goToMain = e => {
     this.props.clickBtn.push('/main-yoonhee');
   };
 
@@ -16,8 +16,7 @@ class LoginForm extends React.Component {
 
   render() {
     const { id, ps } = this.state;
-    const isAble =
-      id.includes('@') && ps.length >= 5 ? 'log-in__btn' : 'disabled';
+    const isAble = id.includes('@') && ps.length >= 5;
     return (
       <form>
         <input
@@ -27,6 +26,7 @@ class LoginForm extends React.Component {
           placeholder="전화번호, 사용자 이름 또는 이메일"
           onChange={this.handleInput}
         />
+
         <input
           name="ps"
           className="log-in__ps"
@@ -34,7 +34,12 @@ class LoginForm extends React.Component {
           placeholder="비밀번호"
           onChange={this.handleInput}
         />
-        <button type="submit" className={isAble} onClick={this.goToMain}>
+        <button
+          type="button"
+          className={`log-in__btn ${isAble ? '' : 'disabled'}`}
+          onClick={this.goToMain}
+          disabled={!isAble}
+        >
           로그인
         </button>
       </form>
