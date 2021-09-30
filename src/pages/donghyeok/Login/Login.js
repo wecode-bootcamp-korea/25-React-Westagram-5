@@ -32,9 +32,30 @@ class Login extends React.Component {
   };
 
   goToMain = e => {
+    e.preventDefault();
     const { id, pw } = this.state;
-    id === 'dong@hyeok' && pw === '123456'
-      ? this.props.history.push('/main-donghyeok')
+    // id === 'dong@hyeok' && pw === '123456'
+    id.includes('@') && pw.length >= 5
+      ? fetch('http://10.58.4.21:8000/users/signup', {
+          method: 'POST',
+          body: JSON.stringify({
+            email: this.state.id,
+            password: this.state.pw,
+          }),
+        })
+          .then(response => response.json())
+          .then(
+            response => {
+              console.log(response.token);
+            }
+            //======================
+            //   {
+            //   if (response.token) {
+            //     localStorage.setItem('token', response.token);
+            //     this.props.history.push('/main-donghyeok');
+            //   }
+            // }
+          )
       : alert('다시 확인해 주세요');
   };
 
@@ -62,7 +83,7 @@ class Login extends React.Component {
               {/* <Link to="/main-donghyeok"> */}
               <button
                 className={this.state.buttonColor ? 'loginOn' : 'loginOff'}
-                onClick={this.goToMain}
+                onClick={this.goToMain} //여기에 fetch 함수넣기
               >
                 로그인
               </button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import MainFeed from './MainFeed';
 import './Main.scss';
 
 class Main extends React.Component {
@@ -42,72 +43,7 @@ class Main extends React.Component {
         </nav> */}
         <main>
           <div className="feed">
-            <article>
-              <div className="article_top">
-                <div className="headerLeft">
-                  <img
-                    alt="profile icon"
-                    id="profile"
-                    src="images/donghyeok/profile.png"
-                  />
-                  <span className="my_id"> wecode.bootcamp </span>
-                </div>
-                <div className="headerRight">
-                  <img
-                    alt="more icon"
-                    id="more"
-                    src="images/donghyeok/more.png"
-                  />
-                </div>
-              </div>
-              <img
-                alt="mainimg"
-                width="100%"
-                src="images/donghyeok/shayna-douglas-h5Bnss19KSo-unsplash.jpg"
-              />
-              <div className="article_bottom">
-                <span className="article_bottom_left">
-                  <img
-                    alt="heart icon"
-                    id="heart"
-                    src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-                  />
-                  <img
-                    alt="comment icon"
-                    id="more"
-                    src="images/donghyeok/comment.png"
-                  />
-                  <img
-                    alt="upload icon"
-                    id="more"
-                    src="images/donghyeok/upload.png"
-                  />
-                </span>
-                <span className="article_bottom_right">
-                  <img
-                    alt="more icon"
-                    id="more"
-                    src="images/donghyeok/save.png"
-                  />
-                </span>
-              </div>
-              <span className="article_bottom_commentlike">
-                <img
-                  alt="profile icon"
-                  id="profile"
-                  src="images/donghyeok/profile.png"
-                />
-                <span>ainworld님 외 10명이 좋아합니다.</span>
-              </span>
-              <div className="article_bottom_comment">
-                <input
-                  type="text"
-                  id="commentInput"
-                  placeholder="댓글 달기..."
-                />
-                <button id="submit">게시</button>
-              </div>
-            </article>
+            <MainFeed />
           </div>
           <div className="main_right">
             <div className="main_right_top">
@@ -198,4 +134,5 @@ class Main extends React.Component {
     );
   }
 }
+
 export default Main;

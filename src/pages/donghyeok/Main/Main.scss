@@ -133,10 +133,35 @@ body {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin: 10px 0;
+          margin: 10px;
           width: 260px;
         }
 
+        .comment_id {
+          padding-right: 10px;
+          font-weight: 700;
+        }
+
+        .article_bottom_commentbox {
+          display: flex;
+          margin: 10px;
+          // padding: 10px;
+          // height: 80px;
+
+          .article_bottom_all {
+            padding-left: 10px;
+            a {
+              display: block;
+              text-decoration: none;
+              color: gray;
+            }
+          }
+        }
+
+        .atticle_bottom_undercommentbox {
+          display: flex;
+          margin: 10px;
+        }
         .article_bottom_comment {
           display: flex;
           justify-content: flex-end;
