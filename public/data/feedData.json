@@ -1,0 +1,38 @@
+[
+  {
+    "idfeed": 1,
+    "usernamefeed": "chulsoo",
+    "userImgfeed": "./images/seungkyun/IMG_1113.JPG",
+    "feedImgfeed": "./images/seungkyun/IMG_2082.jpeg",
+    "contentfeed": "블루보틀 제주점 오늘 오픈~!",
+    "commentData": [
+      { "commentId": 1, "username": "user001", "content": "안녕1?!" },
+      { "commentId": 2, "username": "user002", "content": "안녕2?!" },
+      { "commentId": 3, "username": "user003", "content": "안녕3?!" }
+    ]
+  },
+  {
+    "idfeed": 2,
+    "usernamefeed": "chulsoo",
+    "userImgfeed": "./images/seungkyun/IMG_1113.JPG",
+    "feedImgfeed": "./images/seungkyun/IMG_2030.jpeg",
+    "contentfeed": "김포공항 롯머몰",
+    "commentData": [
+      { "commentId": 1, "username": "user004", "content": "안녕4?!" },
+      { "commentId": 2, "username": "user005", "content": "안녕5?!" },
+      { "commentId": 3, "username": "user006", "content": "안녕6?!" }
+    ]
+  },
+  {
+    "idfeed": 3,
+    "usernamefeed": "younghee",
+    "userImgfeed": "./images/seungkyun/IMG_2474.jpeg",
+    "feedImgfeed": "./images/seungkyun/IMG_1750.jpeg",
+    "contentfeed": "와... 퉁퉁이는 삼대 몇 칠까..?",
+    "commentData": [
+      { "commentId": 1, "username": "user007", "content": "안녕7?!" },
+      { "commentId": 2, "username": "user008", "content": "안녕8?!" },
+      { "commentId": 3, "username": "user009", "content": "안녕9?!" }
+    ]
+  }
+]

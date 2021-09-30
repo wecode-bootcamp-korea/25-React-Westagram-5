@@ -11,52 +11,54 @@
     margin: 0 auto;
     padding-top: 50px;
 
-    .feeds {
-      width: 614px;
-      margin-right: 28px;
-      margin-bottom: 24px;
-      background-color: white;
-      border: 1px solid #dbdbdb;
-
-      .feedHeader {
-        display: flex;
-        align-items: center;
+    .feedContainer {
+      .feeds {
         width: 614px;
-        height: 60px;
-        padding: 16px;
-        border-bottom: 1px solid #dbdbdb;
+        margin-right: 28px;
+        margin-bottom: 24px;
+        background-color: white;
+        border: 1px solid #dbdbdb;
 
-        img {
-          width: 32px;
-          height: 32px;
-          border-radius: 50%;
-        }
-
-        .feedHeaderInside {
+        .feedHeader {
           display: flex;
-          justify-content: space-between;
           align-items: center;
-          width: 536px;
-          height: 26px;
+          width: 614px;
+          height: 60px;
+          padding: 16px;
+          border-bottom: 1px solid #dbdbdb;
 
-          .accountName {
-            margin-left: 14px;
-            font-weight: bold;
-            font-size: 14px;
-            text-decoration: none;
-            color: black;
+          img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
           }
 
-          button {
-            width: 16px;
-            height: 16px;
-            background-color: white;
-            border: none;
-            cursor: pointer;
+          .feedHeaderInside {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 536px;
+            height: 26px;
 
-            .fa-ellipsis-h {
+            .accountName {
+              margin-left: 14px;
+              font-weight: bold;
+              font-size: 14px;
+              text-decoration: none;
               color: black;
-              font-size: 15px;
+            }
+
+            button {
+              width: 16px;
+              height: 16px;
+              background-color: white;
+              border: none;
+              cursor: pointer;
+
+              .fa-ellipsis-h {
+                color: black;
+                font-size: 15px;
+              }
             }
           }
         }
@@ -187,10 +189,11 @@
         align-items: center;
         height: 56px;
         margin-top: 4px;
-        padding: 0 16px;
+        padding: 0 16px 0 10px;
         border-top: 1px solid #dbdbdb;
 
         button {
+          padding: 0px;
           width: 40px;
           height: 40px;
           background-color: white;
@@ -198,9 +201,8 @@
           border: none;
         }
 
-        button:first-child {
+        .fa-smile {
           font-size: 24px;
-          text-align: left;
         }
 
         .uploadComment {
@@ -217,7 +219,6 @@
         .commentField {
           width: 90%;
           height: 18px;
-          margin: auto 0;
           background-color: white;
           border: none;
           font-size: 14px;
