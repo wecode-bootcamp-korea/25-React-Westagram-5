@@ -1,8 +1,6 @@
 /*eslint-disable*/
 import React from 'react';
 import Feed from './Feed/Feed';
-import '../../../styles/common.scss';
-import '../../../styles/reset.scss';
 import './Main.scss';
 
 class Main extends React.Component {

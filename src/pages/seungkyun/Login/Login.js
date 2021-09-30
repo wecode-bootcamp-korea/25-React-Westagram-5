@@ -1,7 +1,5 @@
 /*eslint-disable*/
 import React from 'react';
-import '../../../styles/common.scss';
-import '../../../styles/reset.scss';
 import './Login.scss';
 
 class Login extends React.Component {

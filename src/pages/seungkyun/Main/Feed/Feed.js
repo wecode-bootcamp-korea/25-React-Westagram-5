@@ -11,7 +11,6 @@ import {
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import AddComment from './Comment/AddComment';
 import SavedCommentList from './Comment/SavedCommentList';
-// import './Feed.scss';
 
 class Feed extends React.Component {
   constructor() {
@@ -118,7 +117,7 @@ class Feed extends React.Component {
               <a href="#">{username}</a>
               <span>{content}</span>
             </div>
-            {[...commentData].map(item => {
+            {commentData.map(item => {
               return (
                 <SavedCommentList
                   key={item.commentId}
