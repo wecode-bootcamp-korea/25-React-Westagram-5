@@ -3,9 +3,9 @@ import React from 'react';
 
 class SavedCommentList extends React.Component {
   render() {
-    const { commentId, username, content } = this.props;
+    const { username, content } = this.props;
     return (
-      <div className="commentLines" key={commentId}>
+      <div className="commentLines">
         <div>
           <a href="#">{username}</a>
           <span>{content}</span>

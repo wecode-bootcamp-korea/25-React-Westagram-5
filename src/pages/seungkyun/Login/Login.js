@@ -18,9 +18,8 @@ class Login extends React.Component {
     });
   };
 
-  pressEnter = e => {
+  goToMainByEnterkey = e => {
     if (e.key === 'Enter') {
-      e.preventDefault();
       this.goToMain();
     }
   };
@@ -33,35 +32,34 @@ class Login extends React.Component {
   render() {
     const isBtnValid = this.state.id.includes('@') && this.state.pw.length > 5;
     return (
-      <main className="login-seungkyun">
+      <main className="Seungkyun_login">
         <div className="container">
           <div className="instagram_logo">WEstargram</div>
           <div className="textfield_wrapper">
             <input
-              type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               name="id"
-              className="textfield"
-              onKeyUp={this.pressEnter}
+              className="text_field"
+              onKeyUp={this.goToMainByEnterkey}
               onChange={this.handleInput}
             />
             <input
               type="password"
               placeholder="비밀번호"
               name="pw"
-              className="textfield"
-              onKeyUp={this.pressEnter}
+              className="text_field"
+              onKeyUp={this.goToMainByEnterkey}
               onChange={this.handleInput}
             />
             <button
-              className={`submitButton ${isBtnValid ? 'btnOn' : ''}`}
+              className={`submit_button ${isBtnValid ? 'btn_on' : ''}`}
               disabled={!isBtnValid}
               onClick={this.goToMain}
             >
               로그인
             </button>
           </div>
-          <a href="" className="forgetpw">
+          <a href="" className="forget_pw">
             비밀번호를 잊으셨나요?
           </a>
         </div>

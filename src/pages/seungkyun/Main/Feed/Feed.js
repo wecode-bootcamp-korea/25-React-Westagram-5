@@ -18,7 +18,6 @@ class Feed extends React.Component {
     this.state = {
       commentInput: '',
       commentList: [],
-      isBtnActive: false,
     };
   }
 
@@ -32,21 +31,14 @@ class Feed extends React.Component {
     this.setState({
       commentList: this.state.commentList.concat(this.state.commentInput),
       commentInput: '',
-      isBtnActive: false,
     });
   };
 
-  enterKey = e => {
-    if (e.key === 'Enter' && this.state.isBtnActive) {
+  goToMainByEnterkey = e => {
+    if (e.key === 'Enter' && this.state.commentInput) {
       e.preventDefault();
       this.addComment();
     }
-  };
-
-  activeBtn = () => {
-    this.state.commentInput
-      ? this.setState({ isBtnActive: true })
-      : this.setState({ isBtnActive: false });
   };
 
   render() {
@@ -144,15 +136,12 @@ class Feed extends React.Component {
             placeholder="댓글 달기..."
             value={commentInput}
             onChange={this.getText}
-            onKeyUp={this.activeBtn}
-            onKeyPress={this.enterKey}
-          ></textarea>
+            onKeyPress={this.goToMainByEnterkey}
+          />
           <button
-            className={
-              this.state.isBtnActive ? 'uploadComment active' : 'uploadComment'
-            }
+            className={`uploadComment ${commentInput ? 'active' : ''}`}
             onClick={this.addComment}
-            disabled={!this.state.isBtnActive}
+            disabled={!commentInput}
           >
             게시
           </button>

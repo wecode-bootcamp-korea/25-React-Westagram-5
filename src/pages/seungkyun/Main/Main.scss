@@ -73,7 +73,7 @@
         display: flex;
         justify-content: space-between;
         width: 614px;
-        margin: -4px 0 4px 0;
+        margin: -4px 0 4px;
         padding: 0 16px;
 
         button {
@@ -105,10 +105,7 @@
             width: 20px;
             height: 20px;
             border-radius: 50%;
-
-            &:hover {
-              cursor: pointer;
-            }
+            cursor: pointer;
           }
 
           .likePersonText {
@@ -120,9 +117,7 @@
             a {
               font-weight: 600;
 
-              &:hover {
-                cursor: pointer;
-              }
+              cursor: pointer;
 
               &:first-of-type {
                 padding-left: 5px;

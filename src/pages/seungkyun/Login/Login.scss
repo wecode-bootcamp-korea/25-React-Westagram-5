@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-.login-seungkyun {
+.Seungkyun_login {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +26,7 @@
     .textfield_wrapper {
       margin-top: 24px;
 
-      .textfield {
+      .text_field {
         width: 258px;
         height: 36px;
         padding: 9px 0px 7px 8px;
@@ -42,7 +42,7 @@
         }
       }
 
-      .submitButton {
+      .submit_button {
         width: 260px;
         height: 30px;
         margin: 8px 40px;
@@ -54,11 +54,11 @@
         color: white;
       }
 
-      .btnOn {
+      .btn_on {
         background-color: #0095f6;
       }
     }
-    .forgetpw {
+    .forget_pw {
       display: block;
       position: absolute;
       bottom: 20px;

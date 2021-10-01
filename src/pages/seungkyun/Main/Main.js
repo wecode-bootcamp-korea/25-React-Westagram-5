@@ -12,7 +12,7 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/feedData.json')
+    fetch('/data/feedData.json')
       .then(result => result.json())
       .then(data => {
         this.setState({
