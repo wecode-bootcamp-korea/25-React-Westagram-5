@@ -22,21 +22,21 @@ class Nav extends React.Component {
             <FontAwesomeIcon className="fas fa-search" icon={faSearch} />
           </div>
           <div className="navRight">
-            <a href="#">
+            <a href="#!">
               <img
                 alt="explore img"
                 className="navIcons"
                 src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/explore.png"
               />
             </a>
-            <a href="#">
+            <a href="#!">
               <img
                 alt="heart img"
                 className="navIcons"
                 src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
               />
             </a>
-            <a href="#">
+            <a href="#!">
               <img
                 alt="profile img"
                 className="navIcons"
