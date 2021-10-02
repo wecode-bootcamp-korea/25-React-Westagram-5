@@ -1,0 +1,323 @@
+.main {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin-top: 55px;
+  background-color: #fafafa;
+
+  .header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    /* margin: 20px 0; */
+    height: 80px;
+    background-color: #ffffff;
+
+    .nav-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    h2 {
+      font-family: 'Amiri', serif;
+      font-family: 'Lobster', cursive;
+      margin-left: 5px;
+      margin-bottom: 5px;
+    }
+
+    #instagram {
+      width: 25px;
+      margin-right: 5px;
+    }
+
+    .nav-center {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    #search {
+      padding: 5px 20px;
+      text-align: center;
+    }
+
+    span.search {
+      position: absolute;
+
+      margin-left: 113px;
+      margin-top: 2px;
+      opacity: 40%;
+    }
+
+    .nav-right {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      /* padding: 0 60px; */
+      width: 150px;
+    }
+
+    #explore {
+      height: 25px;
+    }
+
+    #profile {
+      height: 25px;
+    }
+  }
+
+  .feed {
+    height: 90%;
+    width: 40%;
+
+    article {
+      height: 80%;
+      margin: 50px 10px 30px 10px;
+      border: 1px solid var(--color-textgray);
+
+      .articleTop {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+
+        #profile {
+          width: 33px;
+          height: 30px;
+        }
+
+        .headerLeft {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .myId {
+            margin: 10px;
+          }
+        }
+      }
+
+      #more {
+        /* display: flex;
+                  justify-content: flex-end; */
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
+
+      image {
+        position: absolute;
+      }
+
+      .articleBottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+
+        #heart {
+          height: 20px;
+        }
+      }
+
+      .articleBottomCommentlike {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px;
+        width: 260px;
+
+        #profile {
+          width: 33px;
+          height: 30px;
+        }
+      }
+
+      .commentId {
+        padding-right: 10px;
+        font-weight: 700;
+      }
+
+      .articleBottomCommentbox {
+        display: flex;
+        margin: 10px;
+        // padding: 10px;
+        // height: 80px;
+
+        .articleBottomAll {
+          padding-left: 10px;
+          a {
+            display: block;
+            text-decoration: none;
+            color: gray;
+          }
+        }
+      }
+
+      .atticleBottomUndercommentbox {
+        display: flex;
+        margin: 10px;
+      }
+      .articleBottomComment {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        input {
+          width: 100%;
+          padding: 10px 5px;
+        }
+
+        #submit {
+          position: absolute;
+          margin-right: 10px;
+          border: 0;
+          outline: 0;
+          background-color: white;
+          color: #0095f6;
+        }
+      }
+    }
+  }
+
+  .mainRight {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    margin-top: 55px;
+
+    .add {
+      font-size: 10px;
+    }
+
+    .mainRightTop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 180px;
+      margin-bottom: 20px;
+
+      #profile {
+        width: 33px;
+        height: 30px;
+      }
+
+      .mainRightProfile {
+        display: flex;
+        flex-direction: column;
+        margin: 5px;
+
+        .mainRightProfileName {
+          font-weight: 600;
+        }
+
+        .mainRightProfilePlace {
+          font-size: 14px;
+          color: #8e8e8e;
+        }
+      }
+    }
+
+    .mainRightCenter {
+      padding: 10px;
+      height: 150px;
+      width: 260px;
+
+      #profile {
+        width: 33px;
+        height: 30px;
+      }
+
+      .mainRightCenterTop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0;
+
+        #story {
+          font-size: 15px;
+          color: #8e8e8e;
+        }
+      }
+
+      .mainRightCenterProfile {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100px;
+
+        .mainRightCenterProfileId {
+          margin-left: 10px;
+          font-weight: 600;
+        }
+
+        .mainRightCenterProfile1 {
+          display: flex;
+          align-items: center;
+          margin: 5px 0;
+        }
+
+        .mainRightCenterProfile2 {
+          display: flex;
+          align-items: center;
+          margin: 5px 0;
+        }
+
+        .mainRightCenterProfile3 {
+          display: flex;
+          align-items: center;
+          margin: 5px 0;
+        }
+      }
+    }
+
+    .mainRightBottom {
+      margin-top: 20px;
+      padding: 10px;
+
+      #profile {
+        width: 33px;
+        height: 30px;
+      }
+
+      .mainRightBottomTop {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+      }
+
+      .follow {
+        font-size: 15px;
+        color: #0095f6;
+        margin-left: 110px;
+      }
+
+      .mainRightBottomProfileId {
+        margin-left: 10px;
+        font-weight: 600;
+      }
+
+      .mainRightBottomProfile1 {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+
+      .mainRightBottomProfile2 {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+
+      .mainRightBottomProfile3 {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+      }
+    }
+  }
+}
