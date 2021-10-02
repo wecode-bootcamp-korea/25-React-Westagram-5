@@ -18,19 +18,48 @@ class Login extends React.Component {
     });
   };
 
+  validatePattern = () => {
+    const { id, pw } = this.state;
+    const emailPattern =
+      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+    const pwPattern =
+      /^.*(?=^.{8,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+
+    return emailPattern.test(id) && pwPattern.test(pw);
+  };
+
   goToMainByEnterkey = e => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' && this.validatePattern()) {
       this.goToMain();
     }
   };
 
   goToMain = () => {
-    const isBtnValid = this.state.id.includes('@') && this.state.pw.length > 5;
-    isBtnValid && this.props.history.push('/main-seungkyun');
+    this.validatePattern() && this.props.history.push('/main-seungkyun');
+
+    /* (참고) backend와 계정 검증하기!
+  fetch('http://주소:포트/endpoint', {
+  method: 'POST',
+  body: JSON.stringify({
+  email: this.state.id,
+  password: this.state.pw,
+  phone: '010-0000-0000',
+  name: 'SK.Hong',
+  })
+  .then(result => result.json())
+  .then(data => {
+    if (data.token) {
+      localStorage.setItem('token', response.token)
+      this.props.history.push('/main-seungkyun)
+    } else {
+      alert(data.message)
+    }
+  })
+  */
   };
 
   render() {
-    const isBtnValid = this.state.id.includes('@') && this.state.pw.length > 5;
+    const isBtnValid = this.validatePattern();
     return (
       <main className="Seungkyun_login">
         <div className="container_login">
