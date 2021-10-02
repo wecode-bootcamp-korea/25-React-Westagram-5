@@ -1,9 +1,22 @@
+// eslint-disable-next-line
 import React from 'react';
+import Nav from './Nav';
+import Feeds from './Feeds';
+import MainR from './MainR';
+import './Main.scss';
 
-class Main extends React.Component {
+class MainYoonHee extends React.Component {
   render() {
-    return null;
+    return (
+      <div className="main-body">
+        <Nav />
+        <main>
+          <Feeds />
+          <MainR />
+        </main>
+      </div>
+    );
   }
 }
 
-export default Main;
+export default MainYoonHee;
