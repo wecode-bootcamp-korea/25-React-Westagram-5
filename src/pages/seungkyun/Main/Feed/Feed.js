@@ -1,13 +1,7 @@
 /*eslint-disable*/
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faBookmark,
-  faHeart,
-  faComment,
-  faPaperPlane,
-  faSmile,
-} from '@fortawesome/free-regular-svg-icons';
+import { faBookmark, faHeart, faComment, faPaperPlane, faSmile } from '@fortawesome/free-regular-svg-icons';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import AddComment from './Comment/AddComment';
 import SavedCommentList from './Comment/SavedCommentList';
@@ -53,10 +47,7 @@ class Feed extends React.Component {
               {username}
             </a>
             <button>
-              <FontAwesomeIcon
-                className="fas fa-ellipsis-h"
-                icon={faEllipsisH}
-              />
+              <FontAwesomeIcon className="fas fa-ellipsis-h" icon={faEllipsisH} />
             </button>
           </div>
         </div>
@@ -70,29 +61,19 @@ class Feed extends React.Component {
               <FontAwesomeIcon className="far fa-comment" icon={faComment} />
             </button>
             <button>
-              <FontAwesomeIcon
-                className="far fa-paper-plane"
-                icon={faPaperPlane}
-              />
+              <FontAwesomeIcon className="far fa-paper-plane" icon={faPaperPlane} />
             </button>
           </div>
           <div className="iconsRight">
             <button>
-              <FontAwesomeIcon
-                className="fas fa-ellipsis-h"
-                icon={faBookmark}
-              />
+              <FontAwesomeIcon className="fas fa-ellipsis-h" icon={faBookmark} />
             </button>
           </div>
         </div>
         <div className="likePersonContainer">
           <div className="likeBySomeone">
             <a href="">
-              <img
-                alt="someone's personal Image"
-                className="likePersonPic"
-                src="./images/seungkyun/IMG_1113.JPG"
-              />
+              <img alt="someone's personal Image" className="likePersonPic" src="./images/seungkyun/IMG_1113.JPG" />
             </a>
             <div className="likePersonText">
               <a src="##">사람이름</a>님&nbsp;
@@ -110,13 +91,7 @@ class Feed extends React.Component {
               <span>{content}</span>
             </div>
             {commentData.map(item => {
-              return (
-                <SavedCommentList
-                  key={item.commentId}
-                  username={item.username}
-                  content={item.content}
-                />
-              );
+              return <SavedCommentList key={item.commentId} username={item.username} content={item.content} />;
             })}
             <AddComment commentList={commentList} />
           </div>
@@ -131,18 +106,8 @@ class Feed extends React.Component {
           <button>
             <FontAwesomeIcon className="far fa-smile" icon={faSmile} />
           </button>
-          <textarea
-            className="commentField"
-            placeholder="댓글 달기..."
-            value={commentInput}
-            onChange={this.getText}
-            onKeyPress={this.goToMainByEnterkey}
-          />
-          <button
-            className={`uploadComment ${commentInput ? 'active' : ''}`}
-            onClick={this.addComment}
-            disabled={!commentInput}
-          >
+          <textarea className="commentField" placeholder="댓글 달기..." value={commentInput} onChange={this.getText} onKeyPress={this.goToMainByEnterkey} />
+          <button className={`uploadComment ${commentInput ? 'active' : ''}`} onClick={this.addComment} disabled={!commentInput}>
             게시
           </button>
         </div>
