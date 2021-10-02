@@ -32,11 +32,11 @@ class Main extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="MainContainer">
         <header className="headerContainer">
           <div className="headerContents">
             <div className="westagramTag">
-              <a href=" ">
+              <a href="#!">
                 <i className="fab fa-instagram"></i> | Westagram
               </a>
             </div>
@@ -45,13 +45,13 @@ class Main extends React.Component {
               <input type="text" placeholder="검색" />
             </div>
             <nav className="headerRightImage">
-              <a href=" ">
+              <a href="#!">
                 <i className="far fa-compass" />
               </a>
-              <a href=" ">
+              <a href="#!">
                 <i className="far fa-heart" />
               </a>
-              <a href=" ">
+              <a href="#!">
                 <i className="fas fa-user" />
               </a>
             </nav>
@@ -67,7 +67,7 @@ class Main extends React.Component {
                 height="32px"
               />
               <span>hoonstagram</span>
-              <a href=" ">
+              <a href="#!">
                 <i className="fas fa-ellipsis-h"></i>
               </a>
             </div>
@@ -129,11 +129,11 @@ class Main extends React.Component {
                 <CommentList />
               </div>
             </div>
-            <ul className="comment_Lists">
+            <ul className="commentLists">
               {this.state.commentList.map(comment => {
                 return (
-                  <li className="comment_box">
-                    <span className="comment_id">hoonstagram {comment}</span>
+                  <li className="commentBox">
+                    <span className="commentId">hoonstagram {comment}</span>
                   </li>
                 );
               })}
@@ -141,7 +141,6 @@ class Main extends React.Component {
             <div className="feedCommentContainer">
               <input
                 className="feedComment"
-                type="text"
                 value={this.state.comment}
                 placeholder="댓글 달기..."
                 onChange={this.writeComment}
@@ -161,17 +160,17 @@ class Main extends React.Component {
                 width="56px"
                 height="56px"
               />
-              <div className="asideHeadText">
+              <div className="asideFirstRow">
                 <p>hoonstagram</p>
                 <p>hoonstagram | 훈스타그램</p>
               </div>
             </div>
-            <div className="asideBody">
+            <div className="asideStory">
               <div className="asideBodyStory">
                 <span>스토리</span>
                 <p>모두보기</p>
               </div>
-              <div className="asideBodyImgId">
+              <div className="asideStoryImgId">
                 <div className="asidehi">
                   <img
                     alt=""

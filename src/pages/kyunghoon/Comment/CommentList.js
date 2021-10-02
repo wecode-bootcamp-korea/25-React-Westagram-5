@@ -11,9 +11,7 @@ class CommentList extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET',
-    })
+    fetch('/data/commentData.json')
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -24,15 +22,17 @@ class CommentList extends React.Component {
 
   render() {
     return (
-      <>
-        <ul className="comment_list">
-          {this.state.commentList.map(el => {
-            return (
-              <Comment key={el.id} name={el.userName} comment={el.content} />
-            );
-          })}
-        </ul>
-      </>
+      <ul className="comment_list">
+        {this.state.commentList.map(comment => {
+          return (
+            <Comment
+              key={comment.id}
+              name={comment.userName}
+              comment={comment.content}
+            />
+          );
+        })}
+      </ul>
     );
   }
 }

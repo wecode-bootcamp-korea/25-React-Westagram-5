@@ -33,8 +33,10 @@ class Login extends React.Component {
 
   render() {
     console.log(this.state);
+    const isvalidButton =
+      this.state.email.indexOf('@') !== -1 && this.state.password.length >= 5;
     return (
-      <div className="container">
+      <div className="loginContainer">
         <div className="loginInner">
           <h1 className="headline">Westagram</h1>
           <div className="userInformation">
@@ -51,18 +53,8 @@ class Login extends React.Component {
               onChange={this.handlePwInput}
             />
             <button
-              className={
-                this.state.email.indexOf('@') !== -1 &&
-                this.state.password.length >= 5
-                  ? 'activeButton'
-                  : 'disabledButton'
-              }
-              buttonColorControl={
-                this.state.email.indexOf('@') !== -1 &&
-                this.state.password.length >= 5
-                  ? 'false'
-                  : 'true'
-              }
+              className={isvalidButton ? 'activeButton' : 'disabledButton'}
+              disabled={!isvalidButton}
               onClick={this.goToMain}
             >
               로그인
