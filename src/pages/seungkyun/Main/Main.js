@@ -27,21 +27,15 @@ class Main extends React.Component {
         <main className="bodyContainer">
           <div className="feedContainer">
             {this.state.feedList.map(item => {
-              const {
-                idfeed,
-                usernamefeed,
-                userImgfeed,
-                feedImgfeed,
-                contentfeed,
-                commentData,
-              } = item;
+              const { id, username, userImg, feedImg, content, commentData } =
+                item;
               return (
                 <Feed
-                  key={idfeed}
-                  username={usernamefeed}
-                  userImg={userImgfeed}
-                  feedImg={feedImgfeed}
-                  content={contentfeed}
+                  key={id}
+                  username={username}
+                  userImg={userImg}
+                  feedImg={feedImg}
+                  content={content}
                   commentData={commentData}
                 />
               );

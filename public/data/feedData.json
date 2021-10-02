@@ -1,10 +1,10 @@
 [
   {
-    "idfeed": 1,
-    "usernamefeed": "chulsoo",
-    "userImgfeed": "./images/seungkyun/IMG_1113.JPG",
-    "feedImgfeed": "./images/seungkyun/IMG_2082.jpeg",
-    "contentfeed": "블루보틀 제주점 오늘 오픈~!",
+    "id": 1,
+    "username": "chulsoo",
+    "userImg": "./images/seungkyun/IMG_1113.JPG",
+    "feedImg": "./images/seungkyun/IMG_2082.jpeg",
+    "content": "블루보틀 제주점 오늘 오픈~!",
     "commentData": [
       { "commentId": 1, "username": "user001", "content": "안녕1?!" },
       { "commentId": 2, "username": "user002", "content": "안녕2?!" },
@@ -12,7 +12,7 @@
     ]
   },
   {
-    "idfeed": 2,
+    "id": 2,
     "usernamefeed": "chulsoo",
     "userImgfeed": "./images/seungkyun/IMG_1113.JPG",
     "feedImgfeed": "./images/seungkyun/IMG_2030.jpeg",
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "idfeed": 3,
+    "id": 3,
     "usernamefeed": "younghee",
     "userImgfeed": "./images/seungkyun/IMG_2474.jpeg",
     "feedImgfeed": "./images/seungkyun/IMG_1750.jpeg",
