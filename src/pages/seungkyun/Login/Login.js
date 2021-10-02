@@ -36,9 +36,26 @@ class Login extends React.Component {
         <div className="container_login">
           <div className="instagram_logo">WEstargram</div>
           <div className="textfield_wrapper">
-            <input placeholder="전화번호, 사용자 이름 또는 이메일" name="id" className="text_field" onKeyUp={this.goToMainByEnterkey} onChange={this.handleInput} />
-            <input type="password" placeholder="비밀번호" name="pw" className="text_field" onKeyUp={this.goToMainByEnterkey} onChange={this.handleInput} />
-            <button className={`submit_button ${isBtnValid ? 'btn_on' : ''}`} disabled={!isBtnValid} onClick={this.goToMain}>
+            <input
+              placeholder="전화번호, 사용자 이름 또는 이메일"
+              name="id"
+              className="text_field"
+              onKeyUp={this.goToMainByEnterkey}
+              onChange={this.handleInput}
+            />
+            <input
+              type="password"
+              placeholder="비밀번호"
+              name="pw"
+              className="text_field"
+              onKeyUp={this.goToMainByEnterkey}
+              onChange={this.handleInput}
+            />
+            <button
+              className={`submit_button ${isBtnValid ? 'btn_on' : ''}`}
+              disabled={!isBtnValid}
+              onClick={this.goToMain}
+            >
               로그인
             </button>
           </div>
