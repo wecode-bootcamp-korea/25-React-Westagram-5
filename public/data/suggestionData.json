@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "username": "user001",
+    "status": "회원님을 팔로우합니다.",
+    "userimg": "./images/seungkyun/IMG_1455.jpeg",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "username": "user002",
+    "status": "user001님 외 1명이 팔로우합니다.",
+    "userimg": "./images/seungkyun/IMG_1455.jpeg",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "username": "user003",
+    "status": "회원님을 팔로우합니다.",
+    "userimg": "./images/seungkyun/IMG_1455.jpeg",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "username": "user004",
+    "status": "회원님을 팔로우합니다.",
+    "userimg": "./images/seungkyun/IMG_1455.jpeg",
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "username": "user005",
+    "status": "회원님을 팔로우합니다.",
+    "userimg": "./images/seungkyun/IMG_1455.jpeg",
+    "link": "#"
+  }
+]

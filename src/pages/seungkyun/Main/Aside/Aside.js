@@ -1,16 +1,36 @@
 import React from 'react';
+import Footer from './Footer/Footer';
+import Suggestions from './Suggestions/Suggestions';
+import './Aside.scss';
 
 class Aside extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      contents: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('/data/suggestionData.json')
+      .then(result => result.json())
+      .then(data => {
+        this.setState({
+          contents: data,
+        });
+      });
+  }
+
   render() {
+    console.log(this.state.contents);
     return (
-      <aside>
-        <div className="aboutMeInSide">
+      <aside className="aside_seungkyun">
+        <div className="login_user">
           <img
             alt="personalPictureInFeed"
-            className="myImageInSide"
             src="./images/seungkyun/IMG_1113.JPG"
           />
-          <div className="aboutMeNames">
+          <div className="user_info">
             <div>
               <a>seungkyun_y</a>
               <a>SEUNGKYUN HONG</a>
@@ -18,35 +38,8 @@ class Aside extends React.Component {
             <button>전환</button>
           </div>
         </div>
-        <div className="personalRecommendHeader">
-          <span>회원님을 위한 추천</span>
-          <a href="#">모두 보기</a>
-        </div>
-        <div className="personalRecommendMain">
-          <img
-            alt=""
-            className="recommendForYouPic"
-            src="./images/seungkyun/IMG_1455.jpeg"
-          />
-          <div className="personalRecommendID">
-            <div>
-              <a>seungkyun_y</a>
-              <span>회원님을 팔로우합니다</span>
-            </div>
-            <button>팔로우</button>
-          </div>
-        </div>
-        <footer>
-          <p>
-            <a href="#">소개</a>﹒<a href="#">도움말</a>﹒
-            <a href="#">홍보 센터</a>﹒<a href="#">API</a>﹒<a href="#">채용</a>
-            ﹒<a href="#">정보</a>﹒<a href="#">개인정보관리방침</a>﹒
-            <a href="#">약관</a>﹒<a href="#">위치</a>﹒
-            <a href="#">인기계정</a>﹒<a href="#">해시태그</a>﹒
-            <a href="#">언어</a>
-          </p>
-          <p>© 2021 INSTAGRAM FROM FACEBOOK</p>
-        </footer>
+        <Suggestions contents={this.state.contents} />
+        <Footer />
       </aside>
     );
   }

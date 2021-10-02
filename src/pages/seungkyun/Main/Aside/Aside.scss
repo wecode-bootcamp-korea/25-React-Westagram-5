@@ -1,0 +1,52 @@
+.aside_seungkyun {
+  .login_user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 293px;
+    height: 56px;
+
+    img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+    }
+
+    .user_info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-left: 12px;
+      font-size: 14px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        a:first-child {
+          margin-bottom: 4px;
+          font-weight: 600;
+        }
+
+        a:last-child {
+          color: #8e8e8e;
+        }
+      }
+
+      button {
+        width: 30px;
+        height: 14px;
+        padding: 0px;
+        background-color: #fafafa;
+        color: #0095f6;
+        text-align: right;
+        font-size: 12px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
+}

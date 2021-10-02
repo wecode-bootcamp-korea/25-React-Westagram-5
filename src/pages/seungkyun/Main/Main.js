@@ -26,7 +26,7 @@ class Main extends React.Component {
     return (
       <div className="main-seungkyun">
         <main className="bodyContainer">
-          <div className="feedContainer">
+          <div className="feedWrapper">
             {this.state.feedList.map(item => {
               const { id, username, userImg, feedImg, content, commentData } =
                 item;
