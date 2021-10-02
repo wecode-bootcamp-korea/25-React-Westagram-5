@@ -8,81 +8,92 @@ class Login extends React.Component {
     this.state = {
       id: '',
       pw: '',
-      buttonColor: false,
+      // buttonColor: false, //=============수정 1
     };
   }
 
-  handleIdInput = e => {
+  // handleIdInput = e => {
+  //   this.setState({
+  //     id: e.target.value,
+  //   });
+  // };
+
+  // handlePwInput = e => {
+  //   this.setState({
+  //     pw: e.target.value,
+  //   });
+  // };
+
+  handleInput = e => {
     this.setState({
-      id: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
-  handlePwInput = e => {
-    this.setState({
-      pw: e.target.value,
-    });
-  };
+  //============== 수정 2
 
-  buttonChange = () => {
-    const { id, pw } = this.state;
-    id.includes('@') && pw.length >= 5
-      ? this.setState({ buttonColor: true })
-      : this.setState({ buttonColor: false });
-  };
+  // buttonChange = () => {
+  //   const { id, pw } = this.state;
+  //   id.includes('@') && pw.length >= 5
+  //     ? this.setState({ buttonColor: true })
+  //     : this.setState({ buttonColor: false });
+  // };
 
   goToMain = e => {
     e.preventDefault();
     const { id, pw } = this.state;
     // id === 'dong@hyeok' && pw === '123456'
     id.includes('@') && pw.length >= 5
-      ? fetch('http://10.58.4.21:8000/users/signup', {
-          method: 'POST',
-          body: JSON.stringify({
-            email: this.state.id,
-            password: this.state.pw,
-          }),
-        })
-          .then(response => response.json())
-          .then(
-            response => {
-              console.log(response.token);
-            }
-            //======================
-            //   {
-            //   if (response.token) {
-            //     localStorage.setItem('token', response.token);
-            //     this.props.history.push('/main-donghyeok');
-            //   }
-            // }
-          )
-      : alert('다시 확인해 주세요');
+      ? // 기용님 연결
+        // ? fetch('http://10.58.4.21:8000/users/signup', {
+        //     method: 'POST',
+        //     body: JSON.stringify({
+        //       email: this.state.id,
+        //       password: this.state.pw,
+        //     }),
+        //   })
+        //     .then(response => response.json())
+        //     .then(
+        //       response => {
+        //         console.log(response.token);
+        //       }
+        //======================
+        //   {
+        //   if (response.token) {
+        //     localStorage.setItem('token', response.token);
+        this.props.history.push('/main-donghyeok')
+      : //   }
+        // }
+        // )
+        alert('다시 확인해 주세요');
   };
 
   render() {
-    // console.log('state>>>>>', this.state);
-
+    const { id, pw } = this.state;
+    const isValid = id.includes('@') && pw.length >= 5; //수정3 함수로 말고 그냥 const {id, pw} = this.state하는법은? 꼭 함수로 안하도 바로가능
     return (
-      <div className="container">
+      <div className="loginContainer">
         <div className="headtitle">westargram</div>
         <div className="textline">
           <div className="input-wrap">
-            <form onChange={this.buttonChange}>
+            {/* <form onChange={this.buttonChange}> */}
+            <form>
               <input
-                type="text"
                 id="userId"
+                name="id"
                 placeholder="전화번호,사용자 이름 또는 이메일"
-                onChange={this.handleIdInput}
+                onChange={this.handleInput}
               />
               <input
                 type="password"
                 id="password"
+                name="pw"
                 placeholder="비밀번호"
-                onChange={this.handlePwInput}
+                onChange={this.handleInput}
               />
               {/* <Link to="/main-donghyeok"> */}
               <button
-                className={this.state.buttonColor ? 'loginOn' : 'loginOff'}
+                className={isValid ? 'loginOn' : 'loginOff'}
                 onClick={this.goToMain} //여기에 fetch 함수넣기
               >
                 로그인

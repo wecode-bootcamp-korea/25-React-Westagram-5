@@ -6,7 +6,7 @@ class MainFeed extends React.Component {
   constructor() {
     super();
     this.state = {
-      commet: '',
+      comment: '',
       commentList: [],
     };
   }
@@ -24,21 +24,20 @@ class MainFeed extends React.Component {
       commentList: commentList.concat(comment),
       comment: '',
     });
-
-    document.getElementById('commentInput').value = '';
   };
 
   render() {
+    console.log(this.state);
     return (
       <article>
-        <div className="article_top">
+        <div className="articleTop">
           <div className="headerLeft">
             <img
               alt="profile icon"
               id="profile"
               src="images/donghyeok/profile.png"
             />
-            <span className="my_id"> wecode.bootcamp </span>
+            <span className="myId"> wecode.bootcamp </span>
           </div>
           <div className="headerRight">
             <img alt="more icon" id="more" src="images/donghyeok/more.png" />
@@ -49,8 +48,8 @@ class MainFeed extends React.Component {
           width="100%"
           src="images/donghyeok/shayna-douglas-h5Bnss19KSo-unsplash.jpg"
         />
-        <div className="article_bottom">
-          <span className="article_bottom_left">
+        <div className="articleBottom">
+          <span className="articleBottomLeft">
             <img
               alt="heart icon"
               id="heart"
@@ -67,11 +66,11 @@ class MainFeed extends React.Component {
               src="images/donghyeok/upload.png"
             />
           </span>
-          <span className="article_bottom_right">
+          <span className="articleBottomRight">
             <img alt="more icon" id="more" src="images/donghyeok/save.png" />
           </span>
         </div>
-        <span className="article_bottom_commentlike">
+        <span className="articleBottomCommentlike">
           <img
             alt="profile icon"
             id="profile"
@@ -79,32 +78,33 @@ class MainFeed extends React.Component {
           />
           <span>ainworld님 외 10명이 좋아합니다.</span>
         </span>
-        <div className="article_bottom_commentbox">
-          <span className="comment_id">meechindol</span>
+        <div className="articleBottomCommentbox">
+          <span className="commentId">meechindol</span>
           <p>머하냐...</p>
-          <div className="article_bottom_all">
+          <div className="articleBottomAll">
             <a href=" ">모두 보기</a>
           </div>
         </div>
-        <div className="atticle_bottom_undercommentbox">
+        <div className="atticleBottomUndercommentbox">
           <ul id="comments">
             <li>
-              <span className="comment_id">asd_123</span>
+              <span className="commentId">asd_123</span>
               <span>손가락 부러졌음?</span>
             </li>
           </ul>
         </div>
-        <ul className="comment_list">
+        <ul className="commentList">
           {this.state.commentList.map((comment, index) => {
             return <Comment key={index} comment={comment} />;
           })}
         </ul>
-        <form className="article_bottom_comment" onSubmit={this.addComment}>
+        <form className="articleBottomComment" onSubmit={this.addComment}>
           <input
             type="text"
             id="commentInput"
             placeholder="댓글 달기..."
             onChange={this.writeComment}
+            value={this.state.comment}
           />
           <button id="submit">게시</button>
         </form>

@@ -5,7 +5,7 @@ import './Main.scss';
 class Main extends React.Component {
   render() {
     return (
-      <div>
+      <>
         {/* <nav>
           <div className="header">
             <div className="nav-left">
@@ -41,96 +41,92 @@ class Main extends React.Component {
             </div>
           </div>
         </nav> */}
-        <main>
+        <main className="main">
           <div className="feed">
             <MainFeed />
           </div>
-          <div className="main_right">
-            <div className="main_right_top">
+          <div className="mainRight">
+            <div className="mainRightTop">
               <img
                 alt="profile icon"
                 id="profile"
                 src="images/donghyeok/profile.png"
               />
-              <div className="main_right_profile">
-                <span className="main_right_profile_name">wecode_bootcamp</span>
-                <span className="main_right_profile_place">
-                  Wecode | 위코드
-                </span>
+              <div className="mainRightProfile">
+                <span className="mainRightProfileName">wecode_bootcamp</span>
+                <span className="mainRightProfilePlace">Wecode | 위코드</span>
               </div>
             </div>
-            <div className="main_right_center">
-              <div className="main_right_center_top">
+            <div className="mainRightCenter">
+              <div className="mainRightCenterTop">
                 <span id="story">스토리</span>
                 <span className="add">모두 보기</span>
               </div>
-              <div className="main_right_center_profile">
-                <div className="main_right_center_profile1">
+              <div className="mainRightCenterProfile">
+                <div className="mainRightCenterProfile1">
                   <img
                     alt="profile icon"
                     id="profile"
                     src="images/donghyeok/profile.png"
                   />
-                  <span className="main_right_center_profile_id">_yum_s</span>
+                  <span className="mainRightCenterProfileId">_yum_s</span>
                 </div>
-                <div className="main_right_center_profile2">
+                <div className="mainRightCenterProfile2">
                   <img
                     alt="profile icon"
                     id="profile"
                     src="images/donghyeok/profile.png"
                   />
-                  <span className="main_right_center_profile_id">
-                    drink_eat
-                  </span>
+                  <span className="mainRightCenterProfileId">drink_eat</span>
                 </div>
-                <div className="main_right_center_profile3">
+                <div className="mainRightCenterProfile3">
                   <img
                     alt="profile icon"
                     id="profile"
                     src="images/donghyeok/profile.png"
                   />
-                  <span className="main_right_center_profile_id">hyukyc</span>
+                  <span className="mainRightCenterProfileId">hyukyc</span>
                 </div>
               </div>
             </div>
-            <div className="main_right_bottom">
-              <div className="main_right_bottom_top">
+            <div className="mainRightBottom">
+              <div className="mainRightBottomTop">
                 <span>회원님을 위한 추천</span>
                 <span className="add">모두 보기</span>
               </div>
-              <div className="main_right_centr_profile">
-                <div className="main_right_bottom_profile1">
+              <div className="mainRightCentrProfile">
+                <div className="mainRightBottomProfile1">
                   <img
                     alt="profile icon"
                     id="profile"
                     src="images/donghyeok/profile.png"
                   />
-                  <span className="main_right_bottom_profile_id">_yum_s</span>
+                  <span className="mainRightBottomProfileId">_yum_s</span>
                   <span className="follow">팔로우</span>
                 </div>
-                <div className="main_right_bottom_profile2">
+                <div className="mainRightBottomProfile2">
                   <img
                     alt="profile icon"
                     id="profile"
                     src="images/donghyeok/profile.png"
                   />
-                  <span className="main_right_bottom_profile_id">drink_e</span>
+                  <span className="mainRightBottomProfileId">drink_e</span>
                   <span className="follow">팔로우</span>
                 </div>
-                <div className="main_right_bottom_profile3">
+                <div className="mainRightBottomProfile3">
                   <img
                     alt="profile icon"
                     id="profile"
                     src="images/donghyeok/profile.png"
                   />
-                  <span className="main_right_bottom_profile_id">hyukyc</span>
+                  <span className="mainRightBottomProfileId">hyukyc</span>
                   <span className="follow">팔로우</span>
                 </div>
               </div>
             </div>
           </div>
         </main>
-      </div>
+      </>
     );
   }
 }
