@@ -13,10 +13,10 @@
   },
   {
     "id": 2,
-    "usernamefeed": "chulsoo",
-    "userImgfeed": "./images/seungkyun/IMG_1113.JPG",
-    "feedImgfeed": "./images/seungkyun/IMG_2030.jpeg",
-    "contentfeed": "김포공항 롯머몰",
+    "username": "chulsoo",
+    "userImg": "./images/seungkyun/IMG_1113.JPG",
+    "feedImg": "./images/seungkyun/IMG_2030.jpeg",
+    "content": "김포공항 롯머몰",
     "commentData": [
       { "commentId": 1, "username": "user004", "content": "안녕4?!" },
       { "commentId": 2, "username": "user005", "content": "안녕5?!" },
@@ -25,10 +25,10 @@
   },
   {
     "id": 3,
-    "usernamefeed": "younghee",
-    "userImgfeed": "./images/seungkyun/IMG_2474.jpeg",
-    "feedImgfeed": "./images/seungkyun/IMG_1750.jpeg",
-    "contentfeed": "와... 퉁퉁이는 삼대 몇 칠까..?",
+    "username": "younghee",
+    "userImg": "./images/seungkyun/IMG_2474.jpeg",
+    "feedImg": "./images/seungkyun/IMG_1750.jpeg",
+    "content": "와... 퉁퉁이는 삼대 몇 칠까..?",
     "commentData": [
       { "commentId": 1, "username": "user007", "content": "안녕7?!" },
       { "commentId": 2, "username": "user008", "content": "안녕8?!" },
