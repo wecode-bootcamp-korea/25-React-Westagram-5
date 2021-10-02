@@ -8,6 +8,7 @@ class MainR extends React.Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <div className="main-right">

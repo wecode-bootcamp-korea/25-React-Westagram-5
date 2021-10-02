@@ -1,19 +1,19 @@
 .login-art {
-  background-color: var(--color-boxgray);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: var(--color-boxgray);
 
   .log-in__main {
-    background-color: white;
-    width: 300px;
-    height: 350px;
-    border: 1px solid var(--color-boxborder);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    border: 1px solid var(--color-boxborder);
   }
 
   .main-name {
@@ -33,9 +33,9 @@
     width: 230px;
     height: 35px;
     margin: 3px 0;
+    padding: 3px 10px;
     border-radius: 5px;
     border: 1px solid var(--color-boxborder);
-    padding: 3px 10px;
     color: var(--color-textgray);
     background-color: var(--color-boxgray);
   }
@@ -48,24 +48,24 @@
   .log-in__btn {
     width: 230px;
     height: 30px;
+    margin-top: 10px;
+    margin-bottom: 80px;
     border-radius: 5px;
     background-color: var(--color--btn-text);
     border: none;
-    font-weight: bold;
     color: white;
-    margin-top: 10px;
-    margin-bottom: 80px;
+    font-weight: bold;
   }
   .disabled {
     width: 230px;
     height: 30px;
+    margin-top: 10px;
+    margin-bottom: 80px;
     border-radius: 5px;
     background-color: var(--color--btn-text-yet);
     border: none;
-    font-weight: bold;
     color: white;
-    margin-top: 10px;
-    margin-bottom: 80px;
+    font-weight: bold;
   }
 
   .log-in > form {

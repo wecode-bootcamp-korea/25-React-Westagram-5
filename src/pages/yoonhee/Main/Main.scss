@@ -1,9 +1,6 @@
 /*------공통-----*/
 /*------공통-----*/
 
-* {
-  box-sizing: border-box;
-}
 .main-body {
   background-color: var(--color-boxgray);
 }
@@ -45,7 +42,6 @@ a {
 }
 
 .btn {
-  /* margin-left: -10px; */
   padding: 5px 0px;
   border: none;
   border-radius: 5px;
@@ -255,31 +251,31 @@ a {
 /*-------------main-right------------*/
 
 .main-right {
-  width: 25%;
-  margin-top: 65px;
   position: fixed;
   right: 40px;
-}
+  width: 25%;
+  margin-top: 65px;
 
-.main-right__header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  padding: 0 5px;
-}
+  .main-right__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 0 5px;
+  }
 
-.user-and-botton {
-  width: 70%;
-  display: flex;
-}
+  .user-and-botton {
+    width: 70%;
+    display: flex;
+  }
 
-.main-right__story > .box {
-  margin-top: 15px;
-}
+  .main-right__story > .box {
+    margin-top: 15px;
+  }
 
-.main-right__user2 {
-  display: flex;
-  justify-content: space-between;
-  margin: 2px;
+  .main-right__user2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 2px;
+  }
 }

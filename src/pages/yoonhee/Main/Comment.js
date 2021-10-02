@@ -2,8 +2,8 @@ import React from 'react';
 
 class Comment extends React.Component {
   render() {
-    const { id, innerText } = this.props;
-    return <li key={id}>{innerText}</li>;
+    const { innerText } = this.props;
+    return <li>{innerText}</li>;
   }
 }
 

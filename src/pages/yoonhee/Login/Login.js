@@ -9,7 +9,7 @@ class LoginYoonHee extends React.Component {
         <div className="log-in__main">
           <h1 className="main-name">westagram</h1>
           <div className="log-in">
-            <LoginForm clickBtn={this.props.history} />
+            <LoginForm />
           </div>
           <a className="find-ps" href="#!">
             비밀번호를 잊으셨나요?

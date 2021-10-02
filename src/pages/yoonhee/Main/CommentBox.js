@@ -7,22 +7,20 @@ class CommentBox extends React.Component {
     this.state = { feedComment: '', commentList: [] };
   }
 
-  commentInput = e => {
+  handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  isKeyEnter = e => {
+  addCommentByEnter = e => {
     if (e.key === 'Enter') {
-      this.commentAdd();
+      this.addComment();
     }
   };
 
-  commentAdd = () => {
+  addComment = () => {
     const { feedComment, commentList } = this.state;
-    const newfeedComment = feedComment;
-    const addNewFeed = commentList.concat(newfeedComment);
     this.setState({
-      commentList: addNewFeed,
+      commentList: [...commentList, feedComment],
       feedComment: '',
     });
   };
@@ -33,25 +31,23 @@ class CommentBox extends React.Component {
         <div className="feed__comment-box">
           <input
             name="feedComment"
-            id="comment-input"
             className="comment__input"
             placeholder="댓글 달기..."
-            onChange={this.commentInput}
-            onKeyDown={this.isKeyEnter}
+            onChange={this.handleInput}
+            onKeyDown={this.addCommentByEnter}
             value={this.state.feedComment}
           />
           <button
-            id="comment-btn"
             className="btn btn--hover comment__btn"
-            onClick={this.commentAdd}
+            onClick={this.addComment}
           >
             게시
           </button>
         </div>
         <div className="feed__comment">
-          <ul id="comment-list" className="feed__comment-list">
-            {this.state.commentList.map((cur, index) => {
-              return <Comment id={index} innerText={cur} />;
+          <ul className="feed__comment-list">
+            {this.state.commentList.map((comment, index) => {
+              return <Comment key={index} innerText={comment} />;
             })}
           </ul>
         </div>
