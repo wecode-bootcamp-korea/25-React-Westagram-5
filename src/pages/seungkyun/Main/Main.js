@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import React from 'react';
+import Navbar from './Navbar/Navbar';
 import Feed from './Feed/Feed';
 import Aside from './Aside/Aside';
 import './Main.scss';
@@ -25,6 +26,7 @@ class Main extends React.Component {
   render() {
     return (
       <div className="main-seungkyun">
+        <Navbar />
         <main className="bodyContainer">
           <div className="feedWrapper">
             {this.state.feedList.map(item => {
