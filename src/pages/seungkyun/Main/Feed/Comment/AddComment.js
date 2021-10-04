@@ -1,28 +1,33 @@
 /*eslint-disable*/
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBackspace,
+  faHeart as fasheart,
+} from '@fortawesome/free-solid-svg-icons';
+import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 
 class AddComment extends React.Component {
   render() {
-    const { commentList } = this.props;
-
+    const { id, content, isLiked, deleteComment, toggleLikeBtn } = this.props;
     return (
-      <>
-        {commentList.map((comment, i) => {
-          return (
-            <div className="commentLines" key={i}>
-              <div>
-                <a href="#">user9999</a>
-                <span>{comment}</span>
-              </div>
-              <img
-                alt="heart img"
-                className="commentHeart"
-                src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
-              />
-            </div>
-          );
-        })}
-      </>
+      <div className="commentLines" id={id}>
+        <div>
+          <a href="#">user9999</a>
+          <span>{content}</span>
+        </div>
+        <div className="buttons">
+          <button className="delete_button" onClick={() => deleteComment(id)}>
+            <FontAwesomeIcon className="far fa-backspace" icon={faBackspace} />
+          </button>
+          <button className="like_button" onClick={() => toggleLikeBtn(id)}>
+            <FontAwesomeIcon
+              className={isLiked ? 'fas fa-heart' : 'disabled'}
+              icon={isLiked ? fasheart : farHeart}
+            />
+          </button>
+        </div>
+      </div>
     );
   }
 }

@@ -11,6 +11,10 @@ import {
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import AddComment from './Comment/AddComment';
 import SavedCommentList from './Comment/SavedCommentList';
+import './Feed.scss';
+
+// 덧글 관련 기능을 위해 임시로 배치... this.props.commentData.length를 처음 저장받으면 될 것같은데 흠...
+let id = 0;
 
 class Feed extends React.Component {
   constructor() {
@@ -29,16 +33,35 @@ class Feed extends React.Component {
 
   addComment = () => {
     this.setState({
-      commentList: this.state.commentList.concat(this.state.commentInput),
+      commentList: this.state.commentList.concat({
+        id: ++id,
+        content: this.state.commentInput,
+        isLiked: false,
+      }),
       commentInput: '',
     });
   };
 
-  goToMainByEnterkey = e => {
+  addCommentByEnterkey = e => {
     if (e.key === 'Enter' && this.state.commentInput) {
       e.preventDefault();
       this.addComment();
     }
+  };
+
+  deleteComment = comment => {
+    const newCommentList = this.state.commentList.filter(
+      item => item.id !== comment
+    );
+    this.setState({ commentList: newCommentList });
+  };
+
+  toggleLikeBtn = comment => {
+    this.setState({
+      commentList: this.state.commentList.map(item =>
+        item.id === comment ? { ...item, isLiked: !item.isLiked } : item
+      ),
+    });
   };
 
   render() {
@@ -61,7 +84,7 @@ class Feed extends React.Component {
           </div>
         </div>
         <img alt="Main Images" className="feedImage" src={feedImg} />
-        <div className="iconsContainer">
+        <div className="iconsWrapper">
           <div className="iconsLeft">
             <button>
               <FontAwesomeIcon className="far fa-heart" icon={faHeart} />
@@ -113,12 +136,24 @@ class Feed extends React.Component {
               return (
                 <SavedCommentList
                   key={item.commentId}
+                  id={item.commentId}
                   username={item.username}
                   content={item.content}
                 />
               );
             })}
-            <AddComment commentList={commentList} />
+            {commentList.map(item => {
+              return (
+                <AddComment
+                  key={item.id}
+                  id={item.id}
+                  content={item.content}
+                  isLiked={item.isLiked}
+                  deleteComment={this.deleteComment}
+                  toggleLikeBtn={this.toggleLikeBtn}
+                />
+              );
+            })}
           </div>
         </div>
         <div className="days">
@@ -136,7 +171,7 @@ class Feed extends React.Component {
             placeholder="댓글 달기..."
             value={commentInput}
             onChange={this.getText}
-            onKeyPress={this.goToMainByEnterkey}
+            onKeyPress={this.addCommentByEnterkey}
           />
           <button
             className={`uploadComment ${commentInput ? 'active' : ''}`}

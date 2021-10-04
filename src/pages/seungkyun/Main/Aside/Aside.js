@@ -22,7 +22,6 @@ class Aside extends React.Component {
   }
 
   render() {
-    console.log(this.state.contents);
     return (
       <aside className="aside_seungkyun">
         <div className="login_user">
