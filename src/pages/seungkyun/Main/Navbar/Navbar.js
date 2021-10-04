@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import SearchBar from './SearchBar/SearchBar';
 import './Navbar.scss';
 
 class Navbar extends React.Component {
@@ -15,10 +15,7 @@ class Navbar extends React.Component {
               WEstargram
             </a>
           </div>
-          <div className="navCenter">
-            <input type="text" className="searchField" placeholder="검색" />
-            <FontAwesomeIcon className="fas fa-search" icon={faSearch} />
-          </div>
+          <SearchBar />
           <div className="navRight">
             <a href="#">
               <img

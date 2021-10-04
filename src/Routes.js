@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import Nav from './components/Nav/Nav';
 import LoginDongHyeok from './pages/donghyeok/Login/Login';
 import MainDongHyeok from './pages/donghyeok/Main/Main';
 import LoginKyungHoon from './pages/kyunghoon/Login/Login';

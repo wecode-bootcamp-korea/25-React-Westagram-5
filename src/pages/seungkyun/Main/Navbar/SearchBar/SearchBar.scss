@@ -1,0 +1,81 @@
+.navCenter {
+  position: relative;
+
+  .searchField {
+    width: 215px;
+    height: 28px;
+    padding: 7px;
+    background-color: #fafafa;
+    border: 1px solid var(--color-textgray);
+    color: #8e8e8e;
+    opacity: 0.5;
+    font-size: 14px;
+    text-align: center;
+
+    &:focus {
+      padding: 3px 10px 3px 26px;
+      text-align: left;
+      outline: none;
+      border-color: var(--color-textgray);
+    }
+  }
+
+  .fa-search {
+    position: absolute;
+    top: 8.5px;
+    left: 37%;
+    color: #8e8e8e;
+    opacity: 0.5;
+    font-size: 12px;
+  }
+
+  .serach_icon_hide {
+    display: none;
+  }
+
+  .search_result_container {
+    position: absolute;
+    width: 375px;
+    background-color: white;
+    left: -80px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+
+    ul {
+      .search_content {
+        display: flex;
+        align-items: center;
+
+        padding: 8px 16px;
+
+        .image_container {
+          display: flex;
+          align-items: center;
+
+          .search_userimg {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+          }
+        }
+
+        .searched_account {
+          display: flex;
+          width: 100%;
+          flex-direction: column;
+          margin-left: 10px;
+          font-size: 14px;
+
+          h4 {
+            font-weight: bold;
+          }
+
+          span {
+            color: #8e8e8e;
+          }
+        }
+      }
+    }
+  }
+}
